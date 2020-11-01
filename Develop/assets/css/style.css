@@ -1,0 +1,31 @@
+.jumbotron {
+    height: 150px;
+}
+
+.forecast {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    justify-content: space-between;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    margin: 5px;
+}
+
+.severe {
+    background-color: red
+}
+
+.moderate {
+    background-color: yellow
+}
+
+.favorable {
+    background-color: green;
+}
