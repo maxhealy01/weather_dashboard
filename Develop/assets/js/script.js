@@ -30,6 +30,14 @@ var findCity = function(event){
 
 // Create a function for adding searched cities to the dom
 var createSearched = function(city){
+  // Check if the city is already on the list
+  children = searchedEl.children
+  for (i=0; i < children.length; i++){
+    // If so, don't add it again (break function)
+    if (city === children[i].textContent){
+      return
+    }
+  }
   // Add searched city to "searched" div in dom
   var cityEl = document.createElement("button");
   cityEl.textContent = city;
@@ -37,8 +45,6 @@ var createSearched = function(city){
   
   // Give the button similar functionality to the searchbar
   cityEl.onclick = findCity;
-  displayInfo(data, city);
-
 }
 
 // Create a fetch function for TODAY'S WEATHER
@@ -144,7 +150,6 @@ var displayForecast = function(data,city){
     // Create variables for the date, temperature, humidity and icon
     date = moment().add(j,'day').format("L");
     icon = document.createElement("img");
-    console.log(data)
     icon.setAttribute("src","http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png")
 
     temp = data.list[i].main.temp;

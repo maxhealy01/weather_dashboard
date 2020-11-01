@@ -2,6 +2,14 @@
     height: 150px;
 }
 
+body {
+    background-color: #f8f8ff;
+}
+
+.form { 
+    text-align: left;
+}
+
 .forecast {
     flex-direction: row;
     display: flex;
@@ -16,6 +24,11 @@
     background-color: blue;
     color: white;
     margin: 5px;
+}
+
+.searched {
+    display: flex;
+    flex-direction: column;
 }
 
 .severe {
