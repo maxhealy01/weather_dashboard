@@ -41,6 +41,7 @@ var createSearched = function(city){
   // Add searched city to "searched" div in dom
   var cityEl = document.createElement("button");
   cityEl.textContent = city;
+  cityEl.className = "btn";
   searchedEl.append(cityEl);
   
   // Give the button similar functionality to the searchbar
@@ -121,22 +122,24 @@ var displayInfo = function(data, city){
       var uv = data.value;
       // Attach UVI to the page
       var uvEl = document.createElement("p");
-      uvEl.innerHTML = "<p>UV Index: <span>" + uv + "</span></p>";
-    
-
-      if (uv < 3) {
-        $("#uv").className = "favorable"
-      }
-      else if (uv < 6) {
-        $("#uv").className = "moderate"
-      }
-      else{
-        $("#uv").className = "severe"
-      }
-
+      uvEl.innerHTML = "UV Index: <span id='uv'>" + uv + "</span>";
+      changeColor(uv, uvEl);
       todayEl.appendChild(uvEl);
     });
   })
+};
+
+var changeColor = function(uv, uvEl){
+  var uviEl = document.querySelector("span")
+  if (uv < 3) {
+    uvEl.classList.add("favorable")
+  }
+  else if (uv < 6) {
+    uvEl.classList.add("moderate")
+  }
+  else{
+    uvEl.classList.add("severe")
+  }
 }
 
 // Display Info for 5 Day Forecast

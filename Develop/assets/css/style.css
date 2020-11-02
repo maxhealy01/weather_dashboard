@@ -1,13 +1,15 @@
 .jumbotron {
-    height: 150px;
+    height: 100px;
+    background-color: black;
+    color: #f8f8ff;
 }
 
 body {
     background-color: #f8f8ff;
 }
 
-.form { 
-    text-align: left;
+input {
+    max-width: 90%;
 }
 
 .forecast {
@@ -16,6 +18,23 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    border-top: solid black 1px;
+    padding: 15px;
+}
+
+.form {
+    background-color: lightgray;
+    width: 100%;
+    padding: 2px;
+}
+
+#user-form {
+    padding: 10px;
+}
+
+.btn {
+    background-color: #f8f8ff;
+    margin-top: 5px;
 }
 
 .card {
@@ -31,14 +50,18 @@ body {
     flex-direction: column;
 }
 
-.severe {
+span {
+    padding: 2px;
+    border: 1px solid black;
+}
+.severe span {
     background-color: red
 }
 
-.moderate {
+.moderate span {
     background-color: yellow
 }
 
-.favorable {
-    background-color: green;
+.favorable span {
+    background-color: lightgreen;
 }
